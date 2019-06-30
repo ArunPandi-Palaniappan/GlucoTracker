@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Glucose tracker</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.5.0-web/fontawesome-free-5.5.0-web/css/all.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <nav class="nav-bar p-3 navigation">
+        <h5 class="brand" id="brand-name">GLUCOSE TRACKER</h5>
+		<a href="#" class="home-logo"><i class="fas fa-home" id="home-logo"></i></a>
+        <a href="#" class="table-logo"><i class="fas fa-table" id="table-logo"></i></a>
+    </nav>
+    <div class="container calendar-outer col-sm-3 col-md-5 col-lg-5 mt-5" id="calendar-show">
+        <div class="card card-responsive">
+            <div class="card-header responsive" id="calendar-head">
+                <div class="prev btn" id="prev"><i class="fas fa-arrow-circle-left"></i></div>
+                <div class="month" id="monthAndYear">JUNE 2019</div>
+                <div class="next btn" id="next"><i class="fas fa-arrow-circle-right"></i></div>
+            </div>
+                        
+            <table class="table table-responsive table-bordered table-condensed">
+                <div id="days-head">                   
+                    <div id="days1">SUN</div>
+                    <div id="days2">MON</div>
+                    <div id="days3">TUE</div>
+                    <div id="days4">WED</div>
+                    <div id="days5">THU</div>
+                    <div id="days6">FRI</div>
+                    <div id="days7">SAT</div>                    
+                </div>
+                <tbody id="date-display"></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container main" id="main-container">
+        <div id="main-row">
+            <div class="wrapper">
+                <div class="card glucose p-3 m-2 col-7">
+                    <div class="row card-body">
+                        <div class="glucose-body col-7 p-4 ">
+                            <h6 class="glucose-title ml-3 mb-3">BLOOD GLUCOSE</h6>
+                            <div class="input-bf row mb-3 ml-4">
+                                <img src="cookie-solid.svg" id="cookie" >
+                                <input type="text" class="form-control bf-fasting ml-4" id="bf-fasting">
+                            </div>
+                            <div class="input-bf row ml-4">
+                                <img src="cookie-bite-solid.svg" id="cookie">
+                                <input type="text" class="form-control af-fasting ml-4" id="af-fasting">
+                            </div>
+                        </div>
+                        <div class="calendar col-5" id="calendar-btn">
+                            <div class="calendar-body p-4">
+                                <h6 class="calendar-title ml-3 mb-3">CALENDAR</h6>
+                                <div class="month-panel"><span id="month-span">JUN</div>
+                                <div class="date-panel"><span id="date-span">08</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary add-gluco" id="add-gluco">ADD</button>
+                        <div class="btn-group" role="group">
+                            <button class="btn btn-secondary btn-bld" id="mor-btn">BRK</button>
+                            <button class="btn btn-secondary btn-bld" id="lun-btn">LUN</button>
+                            <button class="btn btn-secondary btn-bld" id="din-btn">DIN</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card list p-3 m-2 col-4" id="list">
+                    <ul class="list-group" id="ul-listing">
+                        <li class="list-group-item" id="listing">
+                            <div class="lastmonth panel">LAST MONTH
+                                <span class="badge badge-success badge-secondary">NIL</span>
+                                <span class="badge badge-success badge-secondary">NIL</span>
+                                <span class="badge badge-success badge-secondary">NIL</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item" id="listing">
+                            <div class="lastweek panel">LAST WEEK
+                                <span class="badge badge-success badge-secondary">NIL</span>
+                                <span class="badge badge-success badge-secondary">NIL</span>
+                                <span class="badge badge-success badge-secondary">NIL</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item" id="listing">
+                            <div class="yesterday panel">LAST DAY
+                                <span class="badge badge-success badge-secondary">NIL</span>
+                                <span class="badge badge-success badge-secondary">NIL</span>
+                                <span class="badge badge-success badge-secondary">NIL</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item" id="listing">
+                            <div class="today panel">TODAY
+                                <span class="badge badge-success badge-secondary">NIL</span>
+                                <span class="badge badge-success badge-secondary">NIL</span>
+                                <span class="badge badge-success badge-secondary">NIL</span>
+                            </div>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <ul class="list-item list-group" id="list-item">
+            <li class="list-group-item list-item-items">
+				<strong class="list-date">DATE</strong>
+				<div class="morning-head li-head">
+					<span class="time-title"><strong>MORNING</strong></span>
+					<span class="before-head">Before</span>
+					<span class="after-head">After</span>
+				</div>
+				<div class="afternoon-head li-head">
+					<span class="time-title"><strong>AFTERNOON</strong></span>
+					<span class="before-head">Before</span>
+					<span class="after-head">After</span>
+				</div>
+				<div class="night-head li-head">
+					<span class="time-title"><strong>NIGHT</strong></span>
+					<span class="before-head">Before</span>
+					<span class="after-head">After</span>
+				</div>
+				</li>
+        </ul>      
+    </div>
+    <!--scripts-->
+    <script src="app.js"></script>
+    <script src="../bootstrap/jquery/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../fontawesome-free-5.5.0-web/fontawesome-free-5.5.0-web/js/all.min.js"></script>
+    
+</body>
+</html>
